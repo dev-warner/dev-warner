@@ -1,0 +1,25 @@
+.navigation__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: var(--spacing-sm) solid var(--text-primary);
+  padding: var(--spacing-sm) 0;
+  margin: 0 var(--spacing-md);
+}
+
+.navigation__links {
+  display: flex;
+  flex-direction: column;
+}
+.navigation__link {
+  margin-right: var(--spacing-lg);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+@media (min-width: 640px) {
+  .navigation__links {
+    padding: var(--spacing-md);
+    flex-direction: row;
+  }
+}

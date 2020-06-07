@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+permalink: "/writing/{{ title | slug }}/index.html"
+---
+
+<section class="content post md">
+    <h1>{{ title }}</h1>
+
+    <div class="post__prefix">
+        {% author %}
+        <time>
+            {% readingTime content %}
+        </time>
+    </div>
+
+    {{ content | safe }}
+</section>
+
+<section class="content-width post__info">
+    {% include 'components/post-meta.njk' %}
+    {% include 'components/likes.njk' %}
+    <a class="btn btn__primary join-convo" href="/writing" target="_blank" rel="noopener noreferrer">
+        Join the conversation!
+    </a>
+    {% include 'components/replies.njk' %}
+</section>

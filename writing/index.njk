@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+title: "✍️ Writing"
+tag: all
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
+---
+
+{% include "components/post-list.njk" %}

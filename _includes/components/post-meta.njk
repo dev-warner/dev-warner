@@ -1,0 +1,21 @@
+<div class="post__meta">
+    <div class="post__meta-item">
+        <label>Created</label>
+        <time class="post__meta-item-title">
+            {% formatDate date %}
+        </time>
+    </div>
+    {% if prevPost %}
+        <div class="post__meta-item">
+            <label>Next</label>
+
+            <a class="post__meta-item-title" href="{{prevPost.url}}">{{prevPost.data.title}}</a>
+        </div>
+    {% elif nextPost %}
+        <div class="post__meta-item">
+            <label>Previous</label>
+
+            <a class="post__meta-item-title" href="{{nextPost.url}}">{{nextPost.data.title}}</a>
+        </div>
+    {% endif %}
+</div>

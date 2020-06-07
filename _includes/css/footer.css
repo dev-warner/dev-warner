@@ -1,0 +1,32 @@
+footer {
+  border-top: var(--spacing-sm) solid var(--text-primary);
+}
+
+footer a {
+  color: var(--text-primary);
+}
+
+footer > .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__link {
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer__link > label {
+  font-weight: var(--font-weight-bold);
+}
+
+@media (min-width: 768px) {
+  footer {
+    height: var(--footer-height);
+  }
+  .footer__link {
+    margin: 0 var(--spacing-xl) 0 0;
+  }
+  footer > .container {
+    flex-direction: row;
+  }
+}

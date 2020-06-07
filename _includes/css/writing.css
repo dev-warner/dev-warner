@@ -1,0 +1,22 @@
+.post {
+  padding: var(--spacing-md) 0;
+  padding-bottom: var(--spacing-md);
+}
+
+.post > * {
+  padding: 0 var(--spacing-md);
+}
+
+.post > pre {
+  padding: var(--spacing-md);
+}
+
+.writing {
+  position: relative;
+  padding-top: var(--spacing-lg);
+}
+
+.post__prefix {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,18 @@
+<section class="recent-posts posts">
+    <h3>Recent Posts.</h3>
+    <ol class="recent-posts__list posts__list">
+        {% for post in posts %}
+            <li class="recent-posts__post posts__post">
+                <a class="recent-posts__link posts__link" href="{{post.url | url }}">
+                    <h3>{{ post.data.title }}</h3>
+
+                    {% excerpt post %}
+                </a>
+            </li>
+        {% endfor %}
+    </ol>
+
+    <a class="btn btn__primary" href="/writing">
+            See More Posts.
+        </a>
+</section>

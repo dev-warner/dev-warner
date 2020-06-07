@@ -1,0 +1,18 @@
+<section class="content writing">
+  <h2>{{ title }}</h2>
+
+  <section class="posts">
+    <ol class="posts__list">
+      {% for post in posts %}
+        <li class="posts__post">
+          <a class="posts__link" href="{{post.url | url }}">
+            <h3>{{ post.data.title }}</h3>
+
+            {% excerpt post %}
+          </a>
+        </li>
+      {% endfor %}
+    </ol>
+  </section>
+
+</section>

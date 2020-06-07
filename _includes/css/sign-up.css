@@ -1,0 +1,29 @@
+.sign-up {
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-md);
+  scale: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 calc(var(--spacing-md) * -1);
+}
+
+.sign-up__title {
+  flex: 1;
+  min-width: 100%;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.sign-up__input-container {
+  display: flex;
+}
+
+.sign-up__input {
+  width: 100%;
+  padding: 0 var(--spacing-sm);
+}
+
+.sign-up__btn > span {
+  z-index: 2;
+  white-space: nowrap;
+  position: relative;
+}

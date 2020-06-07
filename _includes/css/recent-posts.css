@@ -1,0 +1,6 @@
+.recent-posts {
+  margin-bottom: var(--spacing-lg);
+}
+.recent-posts > .btn {
+  align-self: flex-end;
+}

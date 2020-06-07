@@ -1,0 +1,11 @@
+<div class="webmentions__likes">
+    <span>❤️ {{webmention['likes'].length}}</span>
+    <span>💬️ {{webmention['replies'].length}}</span>
+
+    {%- for like in webmention['likes'] | head(4) %}
+        {% author like.author %}
+    {%- endfor %}
+    {% if webmention['likes'].length > 4 %}
+        <span>+{{ webmention['likes'].length - 4 }}</span>
+    {% endif %}
+</div>

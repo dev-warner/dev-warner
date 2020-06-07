@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>dev-warner: {{ title }}</title>
+
+    <meta name="title" content="{{ subtitleText }}">
+    <meta name="description" content="{{ subtitleText }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dev-warner.io{{page.url}}">
+    <meta property="og:site_name" content="dev-warner">
+    <meta property="og:locale" content="en-GB">
+    <meta property="og:title" content="{{ title }}">
+
+    <meta property="og:description" content="{{ social.description }}">
+    <meta property="og:image" content="{{ social.imgsrc }}">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="640">
+    <meta property="og:image:alt" content="{{ social.imgalt }}">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@dev_warner">
+    <meta property="twitter:creator" content="@dev_warner">
+    <meta property="twitter:url" content="https://dev-warner.io{{page.url}}">
+
+    <meta property="twitter:title" content="{{ title }}">
+    <meta property="twitter:description" content="{{ social.description }}">
+    <meta property="twitter:image" content="{{ social.imgsrc }}">
+    <meta property="twitter:image:alt" content="{{ social.imgalt }}">
+
+    {%- set css %}
+    {% include 'css/core.css' %}
+    {% include 'css/header.css' %}
+    {% include 'css/footer.css'%}
+    {% include 'css/home.css' %}
+    {% include 'css/recent-posts.css' %}
+    {% include 'css/sign-up.css' %}
+    {% include 'css/sparkle.css' %}
+    {% include 'css/posts.css' %}
+    {% include 'css/writing.css' %}
+    {% include 'css/tag.css' %}
+    {% include 'css/author.css' %}
+    {% include 'css/webmentions.css' %}
+    {% endset %}
+
+    <style>
+      {{css | cssmin | safe}}
+    </style>
+
+    <link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'"></link>
+    <script src="https://unpkg.com/svelte-theme-switcher@0.0.11/dist/wc/index.js"></script>
+
+  </head>
+
+  <body>
+    {% include 'components/header.njk' %}
+    <main>
+      {{ content | safe }}
+    </main>
+    {% include 'components/footer.njk' %}
+
+    <script src="/js/main.js" type="module"></script>
+  </body>
+</html>

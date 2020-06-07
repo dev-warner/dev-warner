@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+title: "Home"
+---
+
+{% set posts = collections.post | head(-3) | reverse %}
+
+<section class="content home">
+    <section class="about-me md">
+        {{ content | safe }}
+    </section>
+    {% include 'components/sign-up.njk'%}
+    {% include 'components/recent-posts.njk' %}
+</section>

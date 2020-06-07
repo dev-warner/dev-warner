@@ -1,0 +1,30 @@
+.tag-list .tag {
+  color: var(--color-white);
+}
+.tag {
+  color: var(--color-white);
+  font-weight: var(--font-weight-med);
+  border-radius: var(--spacing-sm);
+  background-color: var(--text-secondary);
+  padding: 0 var(--spacing-md);
+  margin-right: var(--spacing-sm);
+  line-height: 24px;
+  height: 24px;
+  min-height: 24px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.tag-list .tag--javascript {
+  background: #f0db4f;
+  color: #323330;
+}
+
+.tag-list .tag--css {
+  background-color: #2965f1;
+  color: var(--color-white);
+}
+
+.tag-list .tag--react {
+  background-color: #00d8ff;
+  color: var(--color-white);
+}

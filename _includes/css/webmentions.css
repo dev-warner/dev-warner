@@ -1,0 +1,33 @@
+.webmentions__likes {
+  padding: 0 0 var(--spacing-lg);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.webmentions__likes span {
+  margin-right: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.webmentions__likes .author {
+  margin-right: var(--spacing-sm);
+}
+
+.webmentions__replies {
+  padding: 0 0 var(--spacing-lg);
+}
+
+.replies__single {
+  display: flex;
+  margin: var(--spacing-lg) 0;
+}
+
+.replies__single .author {
+  margin-right: var(--spacing-md);
+  min-width: 40px;
+}
+
+.replies__name {
+  font-weight: var(--font-weight-bold);
+}

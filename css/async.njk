@@ -1,0 +1,11 @@
+---
+permalink: /css/async.css
+eleventyExcludeFromCollections: true
+---
+
+{%- set css %}
+{% include '../_includes/css/code.css' %}
+{% include '../_includes/css/markdown.css' %}
+{% endset %}
+
+{{ css | cssmin | safe}}

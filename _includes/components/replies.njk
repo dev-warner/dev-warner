@@ -1,0 +1,20 @@
+<div class="webmentions__replies">
+    {%- for reply in webmention['replies'] %}
+        <a class="replies__single" href="{{reply.url}}" target="_blank" rel="noopener noreferrer">
+            <div class="author">
+                <img src="{{reply.author.photo}}" alt="{{reply.author.name}}"/>
+            </div>
+            <div class="replies__content">
+                <div class="replies__info">
+                    <span class="replies__name">{{reply.author.name}}</span>
+                    <span class="seperator"></span>
+                    <span>{% formatDate reply.published %}</span>
+                </div>
+
+                <article class="replies__text">
+                    {{reply.content | safe }}
+                </article>
+            </div>
+        </a>
+    {%- endfor %}
+</div>
