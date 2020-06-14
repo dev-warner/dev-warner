@@ -59,12 +59,20 @@ function writeToCache(data) {
 const getWebMentions = async () => {
   console.log("@webmentions: fetching web mentions");
 
-  const cache = readFromCache();
+  let cache;
 
-  if (cache && cache.children.length) {
-    console.log(
-      `@webmentions: previously fetched webmentions: ${cache.children.length}`
-    );
+  try {
+    cache = readFromCache();
+    if (cache && cache.children.length) {
+      console.log(
+        `@webmentions: previously fetched webmentions: ${cache.children.length}`
+      );
+    }
+  } catch (err) {
+    cache = {
+      children: [],
+      lastFetched: null,
+    };
   }
 
   if (isProduction || !cache.children.length) {
