@@ -1,7 +1,5 @@
 <div class="webmentions__likes">
-    <span>❤️ {{webmention['likes'].length}}</span>
-    <span>💬️ {{webmention['replies'].length}}</span>
-
+    {% include 'components/webmentions_count.njk' %}
     {%- for like in webmention['likes'] | head(4) %}
         {% author like.author %}
     {%- endfor %}

@@ -1,0 +1,19 @@
+.liked-posts {
+  margin-bottom: var(--spacing-xl);
+}
+
+.liked-posts .sign-up {
+  margin: var(--spacing-xl) 0;
+}
+
+.liked-posts__post {
+  display: flex;
+}
+
+.liked-posts__post h4 {
+  margin-top: 0;
+}
+
+.liked-posts__post time {
+  font-weight: var(--font-weight-light);
+}

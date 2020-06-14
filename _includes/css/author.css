@@ -1,6 +1,6 @@
 .author {
-  width: var(--spacing-xl);
-  height: var(--spacing-xl);
+  width: var(--spacing-lg);
+  height: var(--spacing-lg);
   border-radius: 50%;
   display: inline-block;
   overflow: hidden;
@@ -14,10 +14,10 @@
   width: auto;
   display: flex;
   align-items: center;
-  margin-right: var(--spacing-lg);
+  width: ;
   font-weight: var(--font-weight-med);
 }
 
 .author--name .author {
-  margin-right: var(--spacing-md);
+  margin-right: var(--spacing-base);
 }

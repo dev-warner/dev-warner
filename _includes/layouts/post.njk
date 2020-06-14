@@ -8,6 +8,7 @@ permalink: "/writing/{{ title | slug }}/index.html"
 
     <div class="post__prefix">
         {% author %}
+        <span class="seperator"></span>
         <time>
             {% readingTime content %}
         </time>
@@ -19,8 +20,5 @@ permalink: "/writing/{{ title | slug }}/index.html"
 <section class="content-width post__info">
     {% include 'components/post-meta.njk' %}
     {% include 'components/likes.njk' %}
-    <a class="btn btn__primary join-convo" href="/writing" target="_blank" rel="noopener noreferrer">
-        Join the conversation!
-    </a>
     {% include 'components/replies.njk' %}
 </section>

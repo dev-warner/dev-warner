@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>dev-warner: {{ title }}</title>
 
-    <meta name="title" content="{{ subtitleText }}">
-    <meta name="description" content="{{ subtitleText }}">
+    <meta name="title" content="{{ title }}">
+    <meta name="description" content="{{ description }}">
 
+    <meta name="keywords" ontent="software development,engineering,javascript,typescript, front-end, front end, front end development">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dev-warner.io{{page.url}}">
     <meta property="og:site_name" content="dev-warner">
@@ -30,8 +31,15 @@
     <meta property="twitter:image" content="{{ social.imgsrc }}">
     <meta property="twitter:image:alt" content="{{ social.imgalt }}">
 
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
+
+    <link rel="preconnect" rel="webmention" href="https://webmention.io/dev-warner.io/webmention"></link>
+    <link rel="preconnect" rel="pingback" href="https://webmention.io/dev-warner.io/xmlrpc"></link>
+
     {%- set css %}
     {% include 'css/core.css' %}
+    {% include 'css/icons.css' %}
     {% include 'css/header.css' %}
     {% include 'css/footer.css'%}
     {% include 'css/home.css' %}
@@ -43,18 +51,24 @@
     {% include 'css/tag.css' %}
     {% include 'css/author.css' %}
     {% include 'css/webmentions.css' %}
+    {% include 'css/liked-posts.css' %}
     {% endset %}
 
     <style>
       {{css | cssmin | safe}}
     </style>
 
-    <link rel="stylesheet" href="/css/async.css" media="print" onload="this.media='all'"></link>
+    <link rel="preload" href="/css/async.css" as="style" onload="this.rel='stylesheet'"></link>
     <script src="https://unpkg.com/svelte-theme-switcher@0.0.11/dist/wc/index.js"></script>
-
+    <script>
+      document
+        .documentElement
+        .classList
+        .remove('theme')
+    </script>
   </head>
 
-  <body>
+  <body >
     {% include 'components/header.njk' %}
     <main>
       {{ content | safe }}

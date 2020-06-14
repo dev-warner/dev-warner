@@ -10,6 +10,10 @@
   margin-top: 0;
 }
 
+.posts__list .webmentions__count {
+  margin-right: var(--spacing-base);
+}
+
 .post__info {
   padding: var(--spacing-md);
 }
@@ -34,7 +38,7 @@
   left: calc(var(--spacing-xl) * -1);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  content: "0" counter(list-counter) ".";
+  content: '0' counter(list-counter) '.';
   position: absolute;
 }
 

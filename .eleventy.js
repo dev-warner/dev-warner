@@ -4,13 +4,17 @@ const minify = require("./config/minify");
 
 const { head } = require("./config/filters");
 const shortcodes = require("./config/shortcodes");
-const { addPrevAndNext, addWebMentions } = require("./config/collections");
+const {
+  addPrevAndNext,
+  addWebMentions,
+  addLikes,
+} = require("./config/collections");
 
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventy) {
-  eleventy.addPassthroughCopy("assets");
+  eleventy.addPassthroughCopy({ assets: "." });
 
   eleventy.addPlugin(pluginRss);
   eleventy.addPlugin(syntaxHighlightPlugin);
@@ -23,6 +27,7 @@ module.exports = function (eleventy) {
 
   eleventy.addFilter("head", head);
 
+  eleventy.addCollection("starred", addLikes);
   eleventy.addCollection("post", async function (collections) {
     const [_, collection] = await Promise.all([
       addPrevAndNext(collections),

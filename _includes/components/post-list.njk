@@ -7,7 +7,12 @@
         <li class="posts__post">
           <a class="posts__link" href="{{post.url | url }}">
             <h3>{{ post.data.title }}</h3>
-
+            {% set webmention = post.data.webmention%}
+            {% include 'components/webmentions_count.njk' %}
+            <span class="seperator"></span>
+            <time>
+              {% readingTime post.templateContent %}
+            </time>
             {% excerpt post %}
           </a>
         </li>

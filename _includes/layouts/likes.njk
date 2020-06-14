@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: "💕 Likes"
+---
+
+<section class="content liked-posts">
+    <h2>{{ title }}</h2>
+
+    <section class="md">
+        {{ content | safe }}
+    </section>
+    {% include 'components/sign-up.njk'%}
+    {% for like in collections.starred %}
+        <a href="{{like.url}}" target="_blank" rel="noopener">
+            <article class="liked-posts__post">
+                <span>⭐</span>
+                <h4>{{like.title}} - <time>{% formatDate like.published %}</time>
+                </h4>
+            </article>
+        </a>
+    {% endfor %}
+
+</section>

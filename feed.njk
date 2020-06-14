@@ -15,7 +15,7 @@
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed class="h-feed" xmlns="http://www.w3.org/2005/Atom">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
@@ -28,11 +28,11 @@
   </author>
   {%- for post in collections.post %}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-    <entry>
-      <title>{{ post.data.title }}</title>
-      <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.date | rssDate }}</updated>
-      <id>{{ absolutePostUrl }}</id>
+    <entry class="h-entry">
+      <title class="p-name p-bridgy-twitter-content">{{ post.data.title }}</title>
+      <link class="u-url" href="{{ absolutePostUrl }}"/>
+      <updated class="dt-published">{{ post.date | rssDate }}</updated>
+      <id class="u-url">{{ absolutePostUrl }}</id>
       <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
     </entry>
   {%- endfor %}

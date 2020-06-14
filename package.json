@@ -20,6 +20,9 @@
     "dotenv": "^8.2.0",
     "html-minifier": "^4.0.0",
     "lodash": "^4.17.15",
+    "netlify-cli": "^2.53.0",
+    "netlify-lambda": "^1.6.3",
+    "node-fetch": "^2.6.0",
     "reading-time": "^1.2.0",
     "terser": "^4.7.0"
   }

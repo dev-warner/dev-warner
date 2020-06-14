@@ -1,11 +1,10 @@
 .webmentions__likes {
-  padding: 0 0 var(--spacing-lg);
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.webmentions__likes span {
+.webmentions__count {
   margin-right: var(--spacing-md);
   font-weight: var(--font-weight-bold);
 }
@@ -25,7 +24,7 @@
 
 .replies__single .author {
   margin-right: var(--spacing-md);
-  min-width: 40px;
+  min-width: var(--spacing-lg);
 }
 
 .replies__name {

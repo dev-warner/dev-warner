@@ -3,9 +3,9 @@ permalink: /js/main.js
 eleventyExcludeFromCollections: true
 ---
 {% set js %}
-{% include '../_includes/js/sparkle.js' %}
 {% include '../_includes/js/sign-up.js' %}
 {% include '../_includes/js/bee.js' %}
 {% include '../_includes/js/console.js' %}
+{% include '../_includes/js/share.js' %}
 {% endset %}
 {{ js | jsmin | safe }}
