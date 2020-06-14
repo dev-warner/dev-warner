@@ -9,7 +9,7 @@ signup_button &&
 
     formData.append("form-name", "newsletter");
 
-    const res = await fetch("/", {
+    const res = await fetch("/.netlify/functions/submission-created", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
