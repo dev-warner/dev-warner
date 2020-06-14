@@ -26,10 +26,7 @@ exports.handler = async function (e) {
       }
 
       return {
-        statusCode: 301,
-        headers: {
-          Location: "https://google.com",
-        },
+        statusCode: 200,
         body: "",
       };
     }
