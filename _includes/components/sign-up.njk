@@ -1,4 +1,4 @@
-<form class="sign-up" action="/.netlify/functions/submission-created" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<form class="sign-up" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
     <h4 class="sign-up__title">
         front-end weekly news.
     </h4>
@@ -6,12 +6,12 @@
     <div hidden aria-hidden="true">
         <label>
       Don’t fill this out if you're human:
-      <input name="bot-field"/>
+        <input name="bot-field"/>
         </label>
     </div>
 
     <div class="sign-up__input-container">
-        <input aria-label="email" required id="email" type="email" class="sign-up__input btn btn__primary" placeholder="example-email@gmail.com"/>
+        <input aria-label="email" name="email" required id="email" type="email" class="sign-up__input btn btn__primary" placeholder="example-email@gmail.com"/>
         <button type="submit" class="sign-up__btn btn btn__accent btn__accent--solid js-sparkle">
             <span>Sign up.</span>
             <div class="sparkle__particle" style="z-index: 1; top: 47.5209%; left: 26.7528%; animation-delay: 0.971094s;">✨</div>
