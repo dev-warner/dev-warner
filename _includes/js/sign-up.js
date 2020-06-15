@@ -1,25 +1,19 @@
 const signup = document.querySelector(".sign-up");
-const signup_button = document.querySelector(".sign-up__btn");
 
-signup_button &&
-  signup_button.addEventListener("click", async function onSubmitSignUp(e) {
+signup &&
+  signup.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const formData = new FormData(signup);
+    const formData = new FormData(e.target);
 
     formData.append("form-name", "newsletter");
 
     const res = await fetch("/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
       body: formData,
     });
 
     if (!res.ok) {
-      return console.error("oops");
+      return console.log("oops: somethings wrong.");
     }
-
-    console.log("yay");
   });
