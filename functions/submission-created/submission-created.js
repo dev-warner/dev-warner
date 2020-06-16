@@ -6,7 +6,8 @@ const URL = "https://api.buttondown.email/v1/subscribers";
 exports.handler = async function (e) {
   try {
     if (e.httpMethod === "POST") {
-      const { email } = JSON.parse(e.body);
+      const { payload } = JSON.parse(e.body);
+      const { email } = payload;
 
       if (!email) {
         throw new Error(ERRORS.INVALID_PARAMS);
