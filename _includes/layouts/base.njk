@@ -7,7 +7,7 @@
 
     <meta name="title" content="{{ title }}">
     <meta name="description" content="{{ description }}">
-
+    <meta name="theme-color" content="#222"/>
     <meta name="keywords" ontent="software development,engineering,javascript,typescript, front-end, front end, front end development">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dev-warner.io{{page.url}}">
@@ -15,11 +15,11 @@
     <meta property="og:locale" content="en-GB">
     <meta property="og:title" content="{{ title }}">
 
-    <meta property="og:description" content="{{ social.description }}">
-    <meta property="og:image" content="{{ social.imgsrc }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ social }}">
     <meta property="og:image:width" content="1280">
     <meta property="og:image:height" content="640">
-    <meta property="og:image:alt" content="{{ social.imgalt }}">
+    <meta property="og:image:alt" content="{{ title }}">
 
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:site" content="@dev_warner">
@@ -27,12 +27,12 @@
     <meta property="twitter:url" content="https://dev-warner.io{{page.url}}">
 
     <meta property="twitter:title" content="{{ title }}">
-    <meta property="twitter:description" content="{{ social.description }}">
-    <meta property="twitter:image" content="{{ social.imgsrc }}">
-    <meta property="twitter:image:alt" content="{{ social.imgalt }}">
+    <meta property="twitter:description" content="{{ description }}">
+    <meta property="twitter:image" content="{{ social }}">
+    <meta property="twitter:image:alt" content="{{ title }}">
 
     <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
-    <link rel="manifest" href="/site.webmanifest"/>
+    <link rel="manifest" href="/site.webmanifest">
 
     <link rel="preconnect" rel="webmention" href="https://webmention.io/dev-warner.io/webmention"></link>
     <link rel="preconnect" rel="pingback" href="https://webmention.io/dev-warner.io/xmlrpc"></link>
@@ -42,30 +42,14 @@
     {% include 'css/icons.css' %}
     {% include 'css/header.css' %}
     {% include 'css/footer.css'%}
-    {% include 'css/home.css' %}
-    {% include 'css/recent-posts.css' %}
-    {% include 'css/sign-up.css' %}
-    {% include 'css/sparkle.css' %}
-    {% include 'css/posts.css' %}
-    {% include 'css/writing.css' %}
-    {% include 'css/tag.css' %}
-    {% include 'css/author.css' %}
-    {% include 'css/webmentions.css' %}
-    {% include 'css/liked-posts.css' %}
     {% endset %}
 
     <style>
       {{css | cssmin | safe}}
     </style>
 
-    <link rel="preload" href="/css/async.css" as="style" onload="this.rel='stylesheet'"></link>
-    <script src="https://unpkg.com/svelte-theme-switcher@0.0.11/dist/wc/index.js"></script>
-    <script>
-      document
-        .documentElement
-        .classList
-        .remove('theme')
-    </script>
+    <link rel="stylesheet" href="/css/main.css"></link>
+    <script src="/js/head.js"></script>
   </head>
 
   <body >
@@ -75,6 +59,12 @@
     </main>
     {% include 'components/footer.njk' %}
 
-    <script src="/js/main.js" type="module"></script>
+    <script>
+      if ("serviceWorker" in navigator) 
+        navigator
+          .serviceWorker
+          .register("/sw.js");
+    </script>
+    <script async src="/js/main.js"></script>
   </body>
 </html>

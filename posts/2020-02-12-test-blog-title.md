@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: Te bello artus iuvenis victrix ingrederis cave
+description: Lorem markdownum pectoris aura frondes dimittite vultu sed vati incepta
 tags:
   - post
   - javascript

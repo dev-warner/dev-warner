@@ -1,0 +1,22 @@
+---
+permalink: /css/main.css
+eleventyExcludeFromCollections: true
+---
+
+{%- set css %}
+{% include '../_includes/css/home.css' %}
+{% include '../_includes/css/recent-posts.css' %}
+{% include '../_includes/css/sign-up.css' %}
+{% include '../_includes/css/sparkle.css' %}
+{% include '../_includes/css/posts.css' %}
+{% include '../_includes/css/writing.css' %}
+{% include '../_includes/css/tag.css' %}
+{% include '../_includes/css/author.css' %}
+{% include '../_includes/css/webmentions.css' %}
+{% include '../_includes/css/liked-posts.css' %}
+{% include '../_includes/css/code.css' %}
+{% include '../_includes/css/markdown.css' %}
+{% include '../_includes/css/share-this.css' %}
+{% endset %}
+
+{{ css | cssmin | safe}}

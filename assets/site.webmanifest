@@ -1,7 +1,8 @@
 {
   "name": "dev-warner",
   "short_name": "dev-warner",
-  "start_url": "/",
+  "description": "Front End Software Engineer based in the North of England 🚀",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "icons": [
     {

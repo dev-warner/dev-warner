@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: Te bello artus iuvenis victrix ingrederis cave 1
+description: Lorem markdownum pectoris aura frondes dimittite vultu sed vati incepta
 tags:
   - post
   - react
@@ -32,18 +33,18 @@ pro contractus medicata est quod, sed vade iactura.
 
 ```javascript
 function createChildren(style, useInlineStyles) {
-  let childrenCount = 0;
+  let childrenCount = 0
   return (children) => {
-    childrenCount += 1;
+    childrenCount += 1
     return children.map((child, i) =>
       createElement({
         node: child,
         style,
         useInlineStyles,
         key: `code-segment-${childrenCount}-${i}`,
-      })
-    );
-  };
+      }),
+    )
+  }
 }
 ```
 
@@ -57,8 +58,8 @@ ferox **adopertaque matrum**: minus.
 ```javascript
 function createStyleObject(classNames, style) {
   return classNames.reduce((styleObject, className) => {
-    return { ...styleObject, ...style[className] };
-  }, {});
+    return { ...styleObject, ...style[className] }
+  }, {})
 }
 ```
 

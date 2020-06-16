@@ -75,7 +75,10 @@ const getWebMentions = async () => {
     };
   }
 
-  if (isProduction || !cache.children.length) {
+  if (
+    (isProduction || !cache.children.length) &&
+    process.env.NODE_ENV !== "staging"
+  ) {
     console.log("@webmentions: checking for new webmentions");
 
     const feed = await fetchWebmentions(cache.lastFetched);

@@ -1,41 +1,43 @@
 require("dotenv").config();
 
-const minify = require("./config/minify");
-
-const { head } = require("./config/filters");
-const shortcodes = require("./config/shortcodes");
-const {
-  addPrevAndNext,
-  addWebMentions,
-  addLikes,
-} = require("./config/collections");
-
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginPWA = require("eleventy-plugin-pwa");
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventy) {
   eleventy.addPassthroughCopy({ assets: "." });
 
   eleventy.addPlugin(pluginRss);
+  eleventy.addPlugin(pluginPWA, {
+    swDest: "./_site/sw.js",
+    globDirectory: "./_site",
+  });
   eleventy.addPlugin(syntaxHighlightPlugin);
 
-  eleventy.addShortcode("tags", shortcodes.tags);
-  eleventy.addShortcode("excerpt", shortcodes.excerpt);
-  eleventy.addShortcode("readingTime", shortcodes.readingTime);
-  eleventy.addShortcode("formatDate", shortcodes.formatDate);
-  eleventy.addShortcode("author", shortcodes.author);
+  eleventy.addShortcode("tags", require("./config/shortcodes/tags"));
+  eleventy.addShortcode("excerpt", require("./config/shortcodes/excerpt"));
+  eleventy.addShortcode(
+    "readingTime",
+    require("./config/shortcodes/read-time")
+  );
+  eleventy.addShortcode(
+    "formatDate",
+    require("./config/shortcodes/format-date")
+  );
+  eleventy.addShortcode("author", require("./config/shortcodes/author"));
 
-  eleventy.addFilter("head", head);
+  eleventy.addFilter("head", require("./config/filters/head"));
 
-  eleventy.addCollection("starred", addLikes);
+  eleventy.addCollection("starred", require("./config/collections/likes"));
   eleventy.addCollection("post", async function (collections) {
     const [_, collection] = await Promise.all([
-      addPrevAndNext(collections),
-      addWebMentions(collections),
+      require("./config/collections/addPrevAndNext")(collections),
+      require("./config/collections/webmentions")(collections),
+      require("./config/collections/social-cards")(collections),
     ]);
 
     return collection;
   });
 
-  minify(eleventy);
+  require("./config/minify")(eleventy);
 };

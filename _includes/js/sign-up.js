@@ -1,4 +1,4 @@
-const signup = document.querySelector(".sign-up");
+const signup = document.querySelector(".sign-up__form");
 
 signup &&
   signup.addEventListener("submit", async function (e) {
@@ -16,4 +16,6 @@ signup &&
     if (!res.ok) {
       return console.log("oops: somethings wrong.");
     }
+
+    signup.innerHTML = `<div class="info">Almost there! Check your inbox for a confirmation e-mail 🚀</div>`;
   });

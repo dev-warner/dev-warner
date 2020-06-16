@@ -1,25 +1,26 @@
-<form class="sign-up" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+<div class="sign-up">
     <h4 class="sign-up__title">
         front-end weekly news.
     </h4>
-
-    <div hidden aria-hidden="true">
-        <label>
+    <form class="sign-up__form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <div hidden aria-hidden="true">
+            <label>
       Don’t fill this out if you're human:
         <input name="bot-field"/>
-        </label>
-    </div>
+            </label>
+        </div>
 
-    <div class="sign-up__input-container">
-        <input aria-label="email" name="email" required id="email" type="email" class="sign-up__input btn btn__primary" placeholder="example-email@gmail.com"/>
-        <button type="submit" class="sign-up__btn btn btn__accent btn__accent--solid js-sparkle">
-            <span>Sign up.</span>
-            <div class="sparkle__particle" style="z-index: 1; top: 47.5209%; left: 26.7528%; animation-delay: 0.971094s;">✨</div>
-            <div class="sparkle__particle" style="z-index: 1; top: 4.62087%; left: 34.343%; animation-delay: 0.0285985s;">✨</div>
-            <div class="sparkle__particle" style="z-index: 1; top: 39.3207%; left: 69.6007%; animation-delay: 0.548871s;">✨</div>
-            <div class="sparkle__particle" style="z-index: 1; top: 31.4313%; left: 75.5134%; animation-delay: 0.364692s;">✨</div>
-            <div class="sparkle__particle" style="z-index: 1; top: 7.06968%; left: 71.2692%; animation-delay: 0.832769s;">✨</div>
-            <div class="sparkle__particle" style="z-index: 1; top: 47.4906%; left: 2.17542%; animation-delay: 0.392621s;">✨</div>
-        </button>
-    </div>
-</form>
+        <div class="sign-up__input-container">
+            <input aria-label="email" name="email" required id="email" type="email" class="sign-up__input btn btn__primary" placeholder="example-email@gmail.com"/>
+            <button type="submit" class="sign-up__btn btn btn__accent btn__accent--solid js-sparkle">
+                <span>Sign up.</span>
+                <div class="sparkle__particle" style="z-index: 1; top: 47.5209%; left: 26.7528%; animation-delay: 0.971094s;">✨</div>
+                <div class="sparkle__particle" style="z-index: 1; top: 4.62087%; left: 34.343%; animation-delay: 0.0285985s;">✨</div>
+                <div class="sparkle__particle" style="z-index: 1; top: 39.3207%; left: 69.6007%; animation-delay: 0.548871s;">✨</div>
+                <div class="sparkle__particle" style="z-index: 1; top: 31.4313%; left: 75.5134%; animation-delay: 0.364692s;">✨</div>
+                <div class="sparkle__particle" style="z-index: 1; top: 7.06968%; left: 71.2692%; animation-delay: 0.832769s;">✨</div>
+                <div class="sparkle__particle" style="z-index: 1; top: 47.4906%; left: 2.17542%; animation-delay: 0.392621s;">✨</div>
+            </button>
+        </div>
+    </form>
+</div>

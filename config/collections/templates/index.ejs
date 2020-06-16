@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    :root {
+      --font-sans: "Helvetica", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+      --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+    }
+    body,
+    html {
+      margin: 0;
+      font-family: var(--font-sans);
+    }
+    * {
+      box-sizing: border-box;
+    }
+    .content {
+      height: 290px;
+      z-index: 150;
+      margin: 0;
+      position: relative;
+    }
+    .card {
+      width: 876px;
+      height: 440px;
+      padding: 32px;
+      border: 32px solid #f0db4f;
+      position: relative;
+      background-color: #fffff2;
+    }
+    .card svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    .tags img {
+      position: absolute;
+      bottom: 16px;
+      z-index: 50;
+      width: 10%;
+      opacity: 1;
+      right: 16px;
+      margin-right: 8px;
+    }
+    .date {
+      font-size: 32px;
+      position: absolute;
+      top: 12px;
+      margin-left: 12px;
+    }
+    .me {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    .w-50 {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      max-height: 100%;
+    }
+    .w-50 img {
+      max-height: 100%;
+      margin: 0 auto;
+      display: block;
+    }
+    .w-50 > * {
+      width: 50%;
+    }
+    footer {
+      position: absolute;
+      font-size: 24px;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 100;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.min.js"></script>
+  <body>
+    <section class="card" style="border-color: <%= color %>;">
+      <div class="content">
+        <%- title %>
+      </div>
+
+      <footer>
+        <div>
+          <img class="me" src="<%= author %>" />
+          <% if (date) { %>
+          <span class="date"><%= date %></span>
+          <% } %>
+        </div>
+      </footer>
+    </section>
+  </body>
+  <script>
+    jQuery("h1").fitText(1.2);
+  </script>
+</html>
