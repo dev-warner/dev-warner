@@ -5,6 +5,8 @@ fields:
 - type: text
   name: layout
   label: layout
+  hidden: true
+  default: layouts/post.njk
 - type: text
   name: title
   label: title
@@ -14,9 +16,12 @@ fields:
 - type: list
   name: tags
   label: tags
+  config:
+    use_select: false
 - type: datetime
   name: date
   label: date
+  default: now
 - type: text
   name: tweet
   label: tweet
