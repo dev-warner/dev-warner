@@ -1,33 +1,33 @@
 ---
 new_page_extension: md
 auto_deploy: false
-admin_path:
-webhook_url:
+admin_path: 
+webhook_url: 
 sections:
-  - type: document
-    path: index.md
-    label: Home
-  - type: document
-    path: likes/index.md
-    label: Likes
-  - type: directory
-    path: ''
-    label: Posts
-    create: all
-    match: posts/**/*.md
-    new_doc_ext: md
+- type: document
+  path: index.md
+  label: Home
+- type: document
+  path: likes/index.md
+  label: Likes
+- type: directory
+  path: ''
+  label: Posts
+  create: all
+  match: posts/**/*.md
+  new_doc_ext: md
 upload_dir: uploads
-public_path: '/uploads'
+public_path: "/uploads"
 front_matter_path: ''
 use_front_matter_path: false
-file_template: ':filename:'
+file_template: ":filename:"
 build:
   preview_env:
-    - URL=https://dev-warner.io
-    - NODE_ENV=staging
+  - URL=https://dev-warner.io
+  - NODE_ENV=staging
   preview_output_directory: _site
   install_dependencies_command: npm install
   preview_docker_image: node:10
-  mount_path: '/srv'
-  working_dir: '/srv'
+  mount_path: "/srv"
+  working_dir: "/srv"
   instant_preview_command: npm start
