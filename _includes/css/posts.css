@@ -18,6 +18,10 @@
   padding: var(--spacing-md);
 }
 
+.post__info .sign-up {
+  margin-bottom: var(--spacing-lg);
+}
+
 .posts__post {
   counter-increment: list-counter;
   margin-bottom: var(--spacing-lg);

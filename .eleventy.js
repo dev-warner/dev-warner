@@ -30,9 +30,9 @@ module.exports = function (eleventy) {
 
   eleventy.addCollection("starred", require("./config/collections/likes"));
   eleventy.addCollection("post", async function (collections) {
-    const [_, collection] = await Promise.all([
-      require("./config/collections/addPrevAndNext")(collections),
+    const [collection] = await Promise.all([
       require("./config/collections/webmentions")(collections),
+      require("./config/collections/addPrevAndNext")(collections),
       require("./config/collections/social-cards")(collections),
     ]);
 

@@ -17,3 +17,7 @@
 .liked-posts__post time {
   font-weight: var(--font-weight-light);
 }
+
+.liked-posts__post span {
+  margin-right: var(--spacing-base);
+}

@@ -24,6 +24,7 @@ module.exports = (eleventy) => {
   eleventy.addFilter("jsmin", function (code) {
     if (process.env.ELEVENTY_PRODUCTION) {
       let minified = Terser.minify(code);
+
       if (minified.error) {
         console.log("Terser error: ", minified.error);
         return code;

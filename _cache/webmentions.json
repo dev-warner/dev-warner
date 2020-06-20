@@ -14,8 +14,8 @@
       "wm-received": "2020-04-14T20:44:59Z",
       "wm-id": 782616,
       "wm-source": "https://brid-gy.appspot.com/like/twitter/dev_warner/1250158638641156097/1499201215",
-      "wm-target": "https://dev-warner.io/writings/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
-      "like-of": "https://dev-warner.io/writings/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
+      "wm-target": "https://dev-warner.io/writing/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
+      "like-of": "https://dev-warner.io/writing/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
       "wm-property": "like-of",
       "wm-private": false
     },
@@ -32,12 +32,12 @@
       "wm-received": "2020-04-13T19:53:12Z",
       "wm-id": 782008,
       "wm-source": "https://brid-gy.appspot.com/comment/twitter/dev_warner/1249787551864492035/1249787612577005569",
-      "wm-target": "https://dev-warner.io/writings/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
+      "wm-target": "https://dev-warner.io/writing/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
       "content": {
         "html": "test!\n<a class=\"u-mention\" href=\"https://dev-warner.io/\"></a>\n<a class=\"u-mention\" href=\"https://twitter.com/dev_warner\"></a>",
         "text": "test!"
       },
-      "in-reply-to": "https://dev-warner.io/writings/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
+      "in-reply-to": "https://dev-warner.io/writing/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
       "wm-property": "in-reply-to",
       "wm-private": false
     },
@@ -54,8 +54,8 @@
       "wm-received": "2020-04-13T19:53:10Z",
       "wm-id": 782007,
       "wm-source": "https://brid-gy.appspot.com/like/twitter/dev_warner/1249787551864492035/1249787118261592064",
-      "wm-target": "https://dev-warner.io/writings/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
-      "like-of": "https://dev-warner.io/writings/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
+      "wm-target": "https://dev-warner.io/writing/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
+      "like-of": "https://dev-warner.io/writing/te-bello-artus-iuvenis-victrix-ingrederis-cave/",
       "wm-property": "like-of",
       "wm-private": false
     }

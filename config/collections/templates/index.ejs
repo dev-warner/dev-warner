@@ -17,6 +17,7 @@
       margin: 0;
       font-family: var(--font-sans);
     }
+
     * {
       box-sizing: border-box;
     }
@@ -30,7 +31,7 @@
       width: 876px;
       height: 440px;
       padding: 32px;
-      border: 32px solid #f0db4f;
+      border-bottom: 32px solid #f0db4f;
       position: relative;
       background-color: #fffff2;
     }
@@ -86,6 +87,12 @@
       justify-content: space-between;
       z-index: 100;
     }
+
+    p {
+      font-size: 32px;
+      line-height: 1.5;
+    }
+
     svg {
       width: 100%;
       height: auto;
@@ -106,6 +113,11 @@
           <span class="date"><%= date %></span>
           <% } %>
         </div>
+        <% if (image) { %>
+        <span class="tags">
+          <img class="tag" src="<%= image %>" />
+        </span>
+        <% } %>
       </footer>
     </section>
   </body>

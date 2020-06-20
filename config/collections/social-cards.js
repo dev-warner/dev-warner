@@ -3,7 +3,7 @@ const path = require("path");
 const puppeteer = require("puppeteer");
 
 const express = require("express");
-const { async } = require("regenerator-runtime");
+const formatDate = require("../shortcodes/format-date");
 
 async function startServer() {
   return new Promise((resolve, rejects) => {
@@ -15,6 +15,11 @@ async function startServer() {
 
     const server = app.listen(0, () => {
       resolve({ server, app });
+    });
+
+    server.on("error", (e) => {
+      server.close();
+      console.error("screenshot failed", e);
     });
   });
 }
@@ -85,26 +90,56 @@ const COLOR = {
 module.exports = async (collections) => {
   const screenshot = await generateCard();
   const coll = collections.getFilteredByTag("post");
+  const BASE = "https://dev-warner.io";
   const screenshoted = coll.map(async (post) => {
-    const tag = COLOR[post.data.tags[1]];
+    const tag = COLOR[post.data.tags && post.data.tags[1]] || {};
 
     if (post.data.page && post.data.page.url) {
       try {
+        const fileName =
+          post.data.page.fileSlug.toLowerCase().split(" ").join("-") || "home";
+
+        const title =
+          post.data.title.length < 10
+            ? `<h1>${post.data.title}</h1> <p>${post.data.description}</p>`
+            : `<h1>${post.data.title}</h1>`;
+
         await screenshot.card({
-          fileName: post.data.page.fileSlug.toLowerCase().split(" ").join("-"),
-          title: post.data.title,
-          date: post.date,
+          fileName,
+          title,
+          date: formatDate(post.date),
           tag: tag.image,
           color: tag.color,
-          author: "me.jpg",
+          image: tag.image,
+          author: "me.jpeg",
         });
+
+        post.data.social = `${BASE}/assets/${fileName}.jpg`;
       } catch (err) {}
     }
 
     return post;
   });
 
-  await Promise.all(screenshoted);
+  await Promise.all([
+    ...screenshoted,
+    screenshot.card({
+      fileName: "home",
+      title: "<h1>Front End Software Engineering Blog 🚀</h1>",
+      author: "me.jpeg",
+      date: "dev-warner",
+      color: "",
+      image: "",
+    }),
+    screenshot.card({
+      fileName: "likes",
+      title: "<h1>Interesting articles about software engineering 💕</h1>",
+      author: "me.jpeg",
+      date: "dev-warner",
+      color: "",
+      image: "",
+    }),
+  ]);
 
   screenshot.close();
 };

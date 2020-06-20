@@ -6,4 +6,4 @@ Here is a collection of blog posts i've enjoyed, and felt the need to share (wit
 
 **Non of these posts are my own.**
 
-Want a list of front-end news straight to your inbox? signup below.
+Want a list of front-end news straight to your inbox? sign up below.

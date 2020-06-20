@@ -31,18 +31,18 @@ pro contractus medicata est quod, sed vade iactura.
 
 ```javascript
 function createChildren(style, useInlineStyles) {
-  let childrenCount = 0;
+  let childrenCount = 0
   return (children) => {
-    childrenCount += 1;
+    childrenCount += 1
     return children.map((child, i) =>
       createElement({
         node: child,
         style,
         useInlineStyles,
         key: `code-segment-${childrenCount}-${i}`,
-      })
-    );
-  };
+      }),
+    )
+  }
 }
 ```
 
@@ -56,8 +56,8 @@ ferox **adopertaque matrum**: minus.
 ```javascript
 function createStyleObject(classNames, style) {
   return classNames.reduce((styleObject, className) => {
-    return { ...styleObject, ...style[className] };
-  }, {});
+    return { ...styleObject, ...style[className] }
+  }, {})
 }
 ```
 
@@ -73,5 +73,3 @@ Comesque et magos cristis, fortuna amanti nunc manemus solita, anseribus
 pulcherrima. In velint subdit aerias
 [ver](http://hospes-dolor.com/illasvenulus.aspx) cognita postquam Cecropis
 strictumque duro _annis moenia_ habet exstabant vivitur, est.
-
----

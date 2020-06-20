@@ -1,7 +1,6 @@
 ---
 layout: layouts/base.njk
 description: {{ description }}
-social: "/assets/{{title | slug}}.png"
 permalink: "/writing/{{title | slug}}/index.html"
 ---
 
@@ -20,6 +19,7 @@ permalink: "/writing/{{title | slug}}/index.html"
 </section>
 
 <section class="content-width post__info">
+    {% include 'components/sign-up.njk'%}
     {% include 'components/post-meta.njk' %}
     {% include 'components/likes.njk' %}
     {% include 'components/replies.njk' %}
