@@ -1,6 +1,7 @@
 :root {
   --twitter-color: #1da1f2;
   --color-white: #fff;
+  --color-black: #222;
   --color-grey: #a0aec0;
   --color-success: #87f3b5;
 
@@ -8,6 +9,7 @@
   --theme-switcher-background-light: #e2e2e2e2;
 
   --font-weight-light: 300;
+  --font-weight-mlight: 400;
   --font-weight-med: 500;
   --font-weight-bold: 700;
 
@@ -21,10 +23,10 @@
   --font-size-2xl: 2.25rem;
   --font-size-3xl: 3rem;
 
-  --font-sans: "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
-  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
 
   --spacing-base: 0.5rem;
   --spacing-sm: calc(var(--spacing-base) / 2);
@@ -303,7 +305,7 @@ code span {
 }
 
 .seperator::after {
-  content: "\2022";
+  content: '\2022';
 }
 
 .share {

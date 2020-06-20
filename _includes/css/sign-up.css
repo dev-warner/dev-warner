@@ -31,4 +31,6 @@
 .sign-up .info {
   background: var(--color-success);
   padding: var(--spacing-base);
+  font-weight: var(--font-weight-mlight);
+  color: var(--color-black);
 }
